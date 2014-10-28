@@ -1,0 +1,36 @@
+.prettyform {
+  .container {
+    width: 50%;
+    margin-top: 60px;
+  }
+
+  .form-elem {
+    font-size: 17px;
+    margin: 8px;
+    // padding: 18px 12px;
+    &:focus {
+      // box-shadow: 
+      //   2px 0 $turq,
+      //   -2px 0 0 $turq,
+      //   0 2px 0 $turq,
+      //   0 -2px 0 $turq;
+      // border: none;
+      // border-color: $turq;
+      // border-width: 2px;
+      // box-shadow: none;
+      // transition: 0.3s ease-in-out;
+    }
+    border-radius: 5px;
+    &:last-child {
+      border-bottom-left-radius: 5px;
+      border-top-left-radius: 5px;
+      border-bottom-right-radius: 5px;
+      border-top-right-radius: 5px;
+    }
+    
+  }
+  select {
+    margin: 8px;
+    font-size: 17px;
+  }
+}

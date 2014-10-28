@@ -1,5 +1,15 @@
-<%= form_for(@question) do |f| %>
-<%= f.text_field :text %>
-<%= f.submit %>
-<%end%>
-
+<div class="prettyform">
+  <div class="container lend">
+    <div class="box">
+      <h2 class="center">New Question</h2>
+      <br>
+      <div class="valign">
+        <%= form_for(@question) do |f| %>
+          <%= f.text_field :text, placeholder: 'Question', class: 'form-control center' %>
+         
+          <%= f.submit "Submit question", class: 'btn-flat btn-blue center' %>
+        <%end%>
+      </div>
+    </div>
+  </div>
+</div>

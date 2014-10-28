@@ -1,3 +1,15 @@
+@import "bootstrap";
+@import "bootstrap-sprockets";
+@import "font-awesome";
+
+@import "globals/_variables";
+
+@import "base";
+
+@import "modules/buttons";
+@import "modules/forms";
+
+
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
