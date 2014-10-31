@@ -27,3 +27,26 @@
     background-color: $blue-hover;
   }
 }
+
+.btn-success {
+   box-shadow: 0px 3px 0px 0px green;
+   text-decoration: none;
+ }
+
+.btn-success:hover,
+.btn-success:focus,
+.btn-success:active,
+.btn-success.active,
+.open .dropdown-toggle.btn-success {
+  color: #ffffff;
+  background-color: #58d68d;
+  border-color: #58d68d;
+  text-decoration: none;
+}
+.btn-success:active,
+.btn-success.active,
+.open .dropdown-toggle.btn-success {
+  background: #27ad60;
+  border-color: #27ad60;
+  text-decoration: none;
+}

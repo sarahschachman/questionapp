@@ -5,6 +5,9 @@
       <br>
         <%= form_for(@question) do |f| %>
           <%= f.text_field :text, placeholder: 'Question',  class: 'form-control' %>
+          <%= f.fields_for :answers do |a| %>
+            <%= a.text_field :text, placeholder: 'Answer',  class: 'form-control' %>
+          <% end %>
 
           <%= f.submit "Submit question", class: 'btn-flat btn-blue col-centered' %>
         <%end%>
