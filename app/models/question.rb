@@ -1,3 +1,4 @@
 class Question < ActiveRecord::Base
-  has_one :answers
+  has_many :answers
+  accepts_nested_attributes_for :answers
 end

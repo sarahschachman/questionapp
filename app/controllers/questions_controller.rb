@@ -9,12 +9,14 @@ class QuestionsController < ApplicationController
 
   def new
     @question = Question.new
-    @answer = Answer.new
+    @question.answers.build
   end
 
   def create
-    question = Question.new(params.require(:question).permit(:text, :answer))
-    post_question(@question)
+    question = Question.new(params.require(:question)
+      .permit(:text, 
+        answers_attributes:[:text]))
+    post_question(question)
     redirect_to questions_path
   end
 end
