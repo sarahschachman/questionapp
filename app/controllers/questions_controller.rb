@@ -1,6 +1,8 @@
 class QuestionsController < ApplicationController
   include QuestionsHelper
 
+  before_action :authenticate_user!, except: [:index]
+
   def index
     @questions = get_question_list()
   end
