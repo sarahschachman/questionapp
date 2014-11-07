@@ -4,7 +4,7 @@ class QuestionsController < ApplicationController
   before_action :authenticate_user!, except: [:index]
 
   def index
-    @questions = get_question_list()
+    @questions = parsed_questions()
   end
 
   def new
@@ -19,4 +19,13 @@ class QuestionsController < ApplicationController
     post_question(question)
     redirect_to questions_path
   end
+
+  def show
+    @questions = get_question_list()
+    #@question = @questions.find(params[:id])
+    @question = @questions[(params[:id]).to_i - 1]["text"]
+    
+    
+  end
+
 end

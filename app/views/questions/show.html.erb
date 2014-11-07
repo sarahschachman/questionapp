@@ -1,0 +1,18 @@
+<div class="prettyform">
+  <div class="container lend">
+    <div class="box">
+      
+      <h3 class="center"><%= @question %></h3>
+      <br>
+
+      <%= form_for(@question) do |f| %>
+          
+            <%= f.text_field :text, placeholder: 'Answer',  class: 'form-control' %>
+          
+
+          <%= f.submit "Submit answer", class: 'btn-flat btn-blue col-centered' %>
+        <%end%>
+        
+    </div>
+  </div>
+</div>

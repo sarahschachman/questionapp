@@ -7,6 +7,14 @@ module QuestionsHelper
     JSON.parse(json)
   end
 
+  def parsed_questions
+    json= RestClient.get("http://localhost:3000/questions")
+    parsed = JSON.parse(json)
+    parsed
+  end
+
+
+
   def post_question question
     json = question.to_json(:include => :answers)
     response = RestClient.post('http://localhost:3000/questions', json, :content_type => :json , :accept => :json)
