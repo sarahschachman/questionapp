@@ -3,21 +3,21 @@
   <h3 class="center">Questions</h3><br>
 
   <% collapse_count = 1 %>
-  <% heading_count = 1 %>
+
   <% @questions.each do |question| %>
 
 
-    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+    <div class="panel-group">
     <div class="panel panel-default">
-      <div class="panel-heading" role="tab" id=<%= "heading#{heading_count}" %>>
+      <div class="panel-heading">
         <h4 class="panel-title">
-          <%= link_to question["text"], "/questions/#{question["id"]}"  %>
-          <a class="btn-flat btn-sm btn-blue" style="margin-left:8px" data-toggle="collapse" data-parent="#accordion" href=<%= "#collapse#{collapse_count}" %> aria-expanded="true" aria-controls=<%= "#collapse#{collapse_count}" %>>
+          <%= link_to question["text"], "/questions/#{question["id"]}" %>
+          <a class="btn-flat btn-sm btn-blue collapsed" style="margin-left:8px;cursor:pointer;" data-target=<%= "#collapse#{collapse_count}" %> data-toggle="collapse">
             Reveal
           </a>
         </h4>
       </div>
-      <div id=<%= "#collapse#{collapse_count}" %> class="panel-collapse collapse in" role="tabpanel" aria-labelledby=<%= "heading#{heading_count}" %>>
+      <div id=<%= "collapse#{collapse_count}" %> class="panel-collapse collapse">
         <div class="panel-body">
           <% if question["answers"][0] %>
             <%= question["answers"][0]["text"] %>
@@ -29,15 +29,17 @@
     </div>
     </div>
     <% collapse_count += 1 %>
-    <% heading_count += 1 %>
+
   <% end %>
 
+<br>
+<%= @questions %>
 
+<button type="button" class="btn btn-danger" data-toggle="collapse" data-target="#demo" aria-expanded="true" aria-controls="demo">
+  simple collapsible
+</button>
 
-<%= @questions %><br>
-
-
-
+<div id="demo" class="collapse in">Blah blah blah</div>
 
 
 </div class="container">

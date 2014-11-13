@@ -1,18 +1,26 @@
 <div class="prettyform">
-  <div class="container lend">
+  <div class="container">
     <div class="box">
       
       <h3 class="center"><%= @question %></h3>
       <br>
 
-      <%= form_for(@question) do |f| %>
+      <%= form_for(@answer) do |f| %>
           
             <%= f.text_field :text, placeholder: 'Answer',  class: 'form-control' %>
           
 
-          <%= f.submit "Submit answer", class: 'btn-flat btn-blue col-centered' %>
+          <%= f.submit "Submit answer", class: 'btn-flat btn-blue col-centered', id: "submit" %>
         <%end%>
         
+    </div><br>
+    <div id="answers" class="box">
+      <h4 class="center">Other Answers</h4>
+      <br>
+      <% @answers.each do |answer| %>
+        <%= answer["text"] %><br>
+      <% end %>
+      <br>
     </div>
   </div>
 </div>
