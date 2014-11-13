@@ -22,6 +22,7 @@ class QuestionsController < ApplicationController
 
   def show
     @questions = get_question_list()
+    @question_id = params[:id]
     @question = @questions[(params[:id]).to_i - 1]["text"]
     @answers = @questions[(params[:id]).to_i - 1]["answers"]
     @answer = Answer.new
