@@ -1,26 +1,39 @@
 <div class="prettyform">
-  <div class="container">
+  <div class="container newanswer">
     <div class="box">
       
       <h3 class="center"><%= @question %></h3>
       <br>
 
-      <%= form_for @answer, :url => question_answers_path(@question_id) do |f| %>
+      <%= form_for @answer, :url => question_answers_path(@question_id), remote: true do |f| %>
           
-            <%= f.text_field :text, placeholder: 'Answer',  class: 'form-control' %>
+            <%= f.text_area :text, placeholder: 'Type your answer here',  class: 'form-control' %>
           
+            <div class="center">
+              <%= f.submit "Submit answer", class: 'btn-flat btn-blue valign', id: "submit_answer" %>
+            </div>
+      <%end%>
+      <div id="response">
+        <br>
+        <h4 class="center">Did you know the answer?</h4>
+        <div class="row">
+          <div class="col-xs-6 yes">
+            <a href="#" class="btn-flat btn-success"><%= icon('check') %></a>
+          </div>
+          <div class="col-xs-6">
+            <a href="#" class="btn-flat btn-pink"><%= icon('times') %></a>
+          </div>
 
-          <%= f.submit "Submit answer", class: 'btn-flat btn-blue col-centered', id: "submit" %>
-        <%end%>
-        
-    </div><br>
-    <div id="answers" class="box">
-      <h4 class="center">Other Answers</h4>
-      <br>
-      <% @answers.each do |answer| %>
-        <%= answer["text"] %><br>
-      <% end %>
-      <br>
+        </div>
+      </div>  
     </div>
+    <br>
+    <div id="answers" class="box center">
+      <h3>Correct Answer</h3>
+      <div class="correct_div">
+        <h4 class="correct"><%= @answers[0]["text"] %></h4>
+      </div>
+    </div>
+    <br><br>
   </div>
 </div>

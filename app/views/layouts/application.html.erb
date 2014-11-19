@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Question App</title>
+  <title>AskUp</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -17,10 +17,11 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
           </button>
-            <%= link_to 'QuestionApp', root_path, class: "navbar-brand float" %>
+            <%= link_to 'AskUp', root_path, class: "navbar-brand float" %>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-left">
+            <li><%= link_to 'Questions', questions_path, class: "float" %></li>
             <li><%= link_to 'New Question', new_question_path, class: "float" %></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
