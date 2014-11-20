@@ -10,12 +10,12 @@
             <%= f.text_area :text, placeholder: 'Type your answer here',  class: 'form-control' %>
           
             <div class="center">
-              <%= f.submit "Submit answer", class: 'btn-flat btn-blue valign', id: "submit_answer" %>
+              <%= f.submit "Submit answer", class: 'btn btn-theme btn-xl', id: "submit_answer" %>
             </div>
       <%end%>
       <div id="response">
         <br>
-        <h4 class="center">Did you know the answer?</h4>
+        <h4 class="center"><b>Did you know the answer?</b></h4>
         <div class="row">
           <div class="col-xs-6 yes">
             <a href="#" class="btn-flat btn-success"><%= icon('check') %></a>

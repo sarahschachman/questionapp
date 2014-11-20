@@ -34,16 +34,8 @@
    background: $green-reg;
  }
 
-.btn-sm {
-  padding-left: 4px;
-  padding-right: 4px;
-  padding-top: 2px;
-  padding-bottom: 2px;
-  font-size: 12px;
-  margin: 2px;
-  box-shadow: 0px 2px 0px 0px $blue-shadow;
-  border-radius: 3px;
-}
+
+
 
 .btn-pink {
   background-color: $pink;
@@ -53,6 +45,34 @@
     background-color: $pink-lighter;
     text-decoration: none;
   }
+}
+
+a.btn {
+  color: white;
+}
+
+.btn-theme {
+  color: #fff;
+  background-color: #384452;
+  border-color: #384452;
+  margin: 4px;
+  padding: 6px 12px;
+  margin: 0;
+  text-decoration: none; 
+  -webkit-transition: background-color .4s linear, color .4s linear;
+  -moz-transition: background-color .4s linear, color .4s linear;
+  -o-transition: background-color .4s linear, color .4s linear;
+  -ms-transition: background-color .4s linear, color .4s linear;
+  transition: background-color .4s linear, color .4s linear;
+}
+.btn-theme:hover,
+.btn-theme:focus,
+.btn-theme:active,
+.btn-theme.active,
+.open .dropdown-toggle.btn-theme {
+  color: #fff;
+  background-color: #00b3fe;
+  border-color: #00b3fe;
 }
 
 .btn-success:hover,
@@ -71,4 +91,23 @@
   background: $green-reg;
   border-color: $green-reg;
   text-decoration: none;
+}
+
+.btn-sm {
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  font-size: 12px;
+  margin: 4px;
+  border-radius: 3px;
+  .btn-blue {
+    box-shadow: 0px 2px 0px 0px $blue-shadow;
+  }
+}
+
+.btn-xl {
+  padding: 0.6vw 1.6vw;
+  font-size: 1.3vw;
+  margin: 10px;
 }

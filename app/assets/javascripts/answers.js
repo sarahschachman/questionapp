@@ -7,9 +7,9 @@ $(document).ready(function(){
   $("#response").hide();
 
   $("#submit_answer").click(function(){
-       $("#answers").show("slow");
+       $("#answers").fadeIn();
        $("#submit_answer").hide("slow");
-       $("#response").show("slow");
+       $("#response").fadeIn();
   });
 
       

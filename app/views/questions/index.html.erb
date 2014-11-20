@@ -1,6 +1,6 @@
 <div class="container">
 
-  <h3 class="center">Questions</h3><br>
+  <h3 class="center"><b>Questions</b></h3><br>
 
   <% collapse_count = 1 %>
 
@@ -11,10 +11,16 @@
     <div class="panel panel-default">
       <div class="panel-heading">
         <h4 class="panel-title">
-          <%= link_to question["text"], "/questions/#{question["id"]}" %>
-          <a class="btn-flat btn-sm btn-blue collapsed" style="margin-left:8px;cursor:pointer;" data-target=<%= "#collapse#{collapse_count}" %> data-toggle="collapse">
-            Reveal
-          </a>
+          <div class="row valign">
+            <div class="col-sm-11">
+              <b><%= link_to question["text"], "/questions/#{question["id"]}" %></b>
+            </div>
+            <div class="col-sm-1">
+              <a class="btn btn-theme btn-sm collapsed" style="margin-left:8px;cursor:pointer;" data-target=<%= "#collapse#{collapse_count}" %> data-toggle="collapse">
+                Reveal
+              </a>
+            </div>
+          </div>
         </h4>
       </div>
       <div id=<%= "collapse#{collapse_count}" %> class="panel-collapse collapse">
