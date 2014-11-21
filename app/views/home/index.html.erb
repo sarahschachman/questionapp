@@ -1,1 +1,95 @@
-Hello World!
+<!-- *****************************************************************************************************************
+   HEADERWRAP
+   ***************************************************************************************************************** -->
+<!-- Header -->
+<section class="jumbotron span-12 one-edge-shadow">
+  <div class="container">
+    <div class="row">
+      <h1>Ask<span>Up</span></h1>
+      <h3>Something clever for the tagline.</h3>
+    </div><br><br>
+    <div class="row">
+      <div class="col-sm-4  center">
+        <div class="row"><%= link_to "New Question", new_question_path, class: "btn btn-theme btn-xl" %></div>
+        
+      </div>
+      <div class="col-sm-8  center"></div>
+      
+    </div><div class="spacer6"></div><div class="spacer6"></div><div class="spacer6"></div><div class="spacer3"></div>
+    <div class="row center"><%= link_to icon('angle-double-down'), '#intro', id: 'home-scroll-down' %></div>
+  </div>
+</section>
+
+  <!-- *****************************************************************************************************************
+   SERVICE LOGOS
+   ***************************************************************************************************************** -->
+   <div id="intro">
+    <div class="container">
+      <div class="row center">
+        <div class="col-md-4">
+          <%= icon('pencil') %>
+          <h3>Create Questions</h3>
+          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+          <p><br/><a href="#" class="btn btn-theme">More Info</a></p>
+        </div>
+        <div class="col-md-4">
+          <%= icon('list-alt') %>
+          <h3>Test your Knowledge</h3>
+          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+          <p><br/><a href="#" class="btn btn-theme">More Info</a></p>
+        </div>
+        <div class="col-md-4">
+          <%= icon('university') %>
+          <h3>Study the Right Way</h3>
+          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+          <p><br/><a href="#" class="btn btn-theme">More Info</a></p>
+        </div>            
+      </div>
+    </div><!--/container -->
+   </div><!--/service -->
+
+    <!-- *****************************************************************************************************************
+   TESTIMONIALS
+   ***************************************************************************************************************** -->
+   <div id="twrap">
+    <div class="container center">
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2">
+        <%= icon('comment-o') %>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+        <h4><br/>Jonathan Hausmann</h4>
+        <p>RHEUMATOLOGY FELLOW - HARVARD MEDICAL SCHOOL</p>
+        </div>
+      </div><!--/row -->
+    </div><!--/container -->
+   </div><!--/twrap -->
+
+   <!-- *****************************************************************************************************************
+   FOOTER
+   ***************************************************************************************************************** -->
+   <div id="footerwrap">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4">
+          <h4>About</h4>
+          <div class="hline-w"></div>
+          <p>Harvard Teaching and Learning Technologies ..... Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+        </div>
+        <div class="col-lg-4">
+          <h4>Find out More</h4>
+          <div class="hline-w"></div>
+          <p>To learn more about spaced education learning and the advantages of retrieval studying, check out the book <a href="http://www.amazon.com/Make-It-Stick-Successful-Learning/dp/0674729013" target="_blank"><i>Make it Stick</i> by Peter C. Brown. &nbsp <%= icon('share-square-o') %></a></p>
+        </div>
+        <div class="col-lg-4">
+          <h4>Our Office</h4>
+          <div class="hline-w"></div>
+          <p>
+            125 Mt. Auburn Street room 524<br>
+            Cambridge, MA 02138
+          </p>
+          <p>&copy 2014 Harvard TLT</p>
+        </div>
+      
+      </div><!--/row -->
+    </div><!--/container -->
+   </div><!--/footerwrap -->
