@@ -1,0 +1,23 @@
+.alert {
+  color: white;
+  margin: 0;
+  font-size: 20px;
+  opacity: 0.6;
+  i {
+    cursor: pointer;
+  }
+  a:hover {
+    color: white;
+    
+  }
+}
+
+.alert-success {
+  background-color: $blue-reg;
+  border: 1px solid $blue-reg;
+}
+
+.alert-danger {
+  background-color: $pink-lighter;
+  border: 1px solid $pink-darker;
+}

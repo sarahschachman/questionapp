@@ -42,8 +42,20 @@
       </div>
     </div>
 
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
+<div class="spacer_nav"></div>
+    <% if flash[:notice] %>
+      <div class="alert alert-success center">
+        <%= flash[:notice] %> &nbsp
+        <a href="#" class="close-alert grow"><%= icon('times-circle') %></a>
+      </div>
+      <% end %>
+
+      <% if flash[:alert] %>
+      <div class="alert alert-danger center">
+        <%= flash[:alert] %> &nbsp
+        <a href="#" class="close-alert grow"><%= icon('times-circle') %></a>
+      </div>
+    <% end %>
 
 <%= yield %>
 
