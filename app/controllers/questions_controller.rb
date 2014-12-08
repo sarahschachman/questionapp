@@ -1,10 +1,14 @@
 class QuestionsController < ApplicationController
   include QuestionsHelper
 
+
   before_action :authenticate_user!, except: [:index]
 
   def index
     @questions = parsed_questions()
+    @analytics = Analytics.new
+    @analytics.print_hello
+    analyzer.info("HELLO WORLD THIS IS THE ANALYZER")
   end
 
   def new
@@ -13,11 +17,16 @@ class QuestionsController < ApplicationController
   end
 
   def create
+    # save the params hash as a variable
+    # index into that hash with "question", we get back a hash
+    # merge "user_id" => actual user id with that hash
+
     question = Question.new(params.require(:question)
       .permit(:text, 
         answers_attributes:[:text]))
+    question.user_id = current_user.id
     post_question(question)
-    redirect_to questions_path
+    redirect_to new_question_path, notice: "Your question has been submitted! Enter another if you would like."
   end
 
   def show
