@@ -17,5 +17,6 @@ class AnswersController < ApplicationController
     @question = @questions[(params[:question_id]).to_i - 1]["text"]
     @answers = @questions[(params[:question_id]).to_i - 1]["answers"]
     render "questions/show"
+    
   end
 end

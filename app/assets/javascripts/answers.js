@@ -14,3 +14,11 @@ $(document).ready(function(){
 
       
 });
+
+// Function to call the respond method which logs the response in the log.
+
+// $(function() {
+//   $('#respond-yes').click(function (event) {
+//     analyzer.info("hiiiiiiiii")
+//   });
+// });

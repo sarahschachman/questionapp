@@ -18,10 +18,10 @@
         <h4 class="center"><b>Did you know the answer?</b></h4>
         <div class="row">
           <div class="col-xs-6 yes">
-            <a href="#" class="btn-flat btn-success"><%= icon('check') %></a>
+            <a href="#" id="respond-yes" class="btn-flat btn-success"><%= icon('check') %></a>
           </div>
           <div class="col-xs-6">
-            <a href="#" class="btn-flat btn-pink"><%= icon('times') %></a>
+            <a href="#" id ="respond-no" class="btn-flat btn-pink"><%= icon('times') %></a>
           </div>
 
         </div>
@@ -37,3 +37,9 @@
     <br><br>
   </div>
 </div>
+
+
+<!-- In javascript (see answers.js): call respond method with corresponding response, launch appropriate modal
+        Yes: "Great job! Keep at it" then a button "Answer another question"
+        No: "Keep studying, you can do it!" then a button "Answer another question"
+      Both buttons go to questions index -->

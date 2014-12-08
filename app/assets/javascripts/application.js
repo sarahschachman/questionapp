@@ -14,4 +14,6 @@
 //= require jquery_ujs
 //= require bootstrap-sprockets 
 //= require custom
+//= require home
+//= require answers
 //= require_tree .

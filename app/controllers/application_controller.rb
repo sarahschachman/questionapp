@@ -7,4 +7,6 @@ class ApplicationController < ActionController::Base
   def analyzer
     @@analytics_logger ||= Logger.new("#{Rails.root}/log/analytics.log")
   end
+
+  
 end

@@ -17,10 +17,6 @@ class QuestionsController < ApplicationController
   end
 
   def create
-    # save the params hash as a variable
-    # index into that hash with "question", we get back a hash
-    # merge "user_id" => actual user id with that hash
-
     question = Question.new(params.require(:question)
       .permit(:text, 
         answers_attributes:[:text]))
