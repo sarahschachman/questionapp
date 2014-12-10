@@ -1,3 +1,6 @@
+# TODO: short description of project in this file; it will show up in github -- consider new name AskUp
+# TODO: include comments about creating a local database.yml and secrets.yml based on the *.yml.example files
+
 == README
 
 This README would normally document whatever steps are necessary to get the

@@ -1,3 +1,5 @@
+# TODO: remove this file from repo
+
 From 3f49166f8f0c268dd7184404b292b8db8fa1b8b7 Mon Sep 17 00:00:00 2001
 From: Phil McGachey <phil_mcgachey@harvard.edu>
 Date: Sat, 1 Nov 2014 11:12:23 -0400
@@ -17,18 +19,18 @@ index a3e73ca..ab12bc1 100644
 --- a/app/controllers/questions_controller.rb
 +++ b/app/controllers/questions_controller.rb
 @@ -7,12 +7,14 @@ class QuestionsController < ApplicationController
- 
+
    def new
      @question = Question.new
 -    @answer = Answer.new
 +    @question.answers.build
    end
- 
+
    def create
 -    question = Question.new(params.require(:question).permit(:text, :answer))
 -    post_question(@question)
 +    question = Question.new(params.require(:question)
-+      .permit(:text, 
++      .permit(:text,
 +        answers_attributes:[:text]))
 +    post_question(question)
      redirect_to questions_path
@@ -40,7 +42,7 @@ index 49300c0..cbfb042 100644
 +++ b/app/helpers/questions_helper.rb
 @@ -8,8 +8,8 @@ module QuestionsHelper
    end
- 
+
    def post_question question
 -    json = question.to_json
 -    response = RestClient.post('http://localhost:3000/questions', :data => json, :content_type => :json , :accept => :json)
@@ -78,18 +80,18 @@ index 352a799..9776cf1 100644
 @@ -11,11 +11,13 @@
  #
  # It's strongly recommended that you check this file into your version control system.
- 
+
 -ActiveRecord::Schema.define(version: 20141030231443) do
 +ActiveRecord::Schema.define(version: 20141101140632) do
- 
+
    create_table "answers", force: true do |t|
      t.datetime "created_at"
      t.datetime "updated_at"
 +    t.integer  "question_id"
 +    t.string   "text"
    end
- 
+
    create_table "questions", force: true do |t|
--- 
+--
 1.9.3 (Apple Git-50)
 

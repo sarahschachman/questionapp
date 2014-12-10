@@ -1,3 +1,5 @@
+# TODO: Copy this file to database.yml.example and then exclude this one altogether from the repo using .gitignore
+
 # SQLite version 3.x
 #   gem install sqlite3
 #
