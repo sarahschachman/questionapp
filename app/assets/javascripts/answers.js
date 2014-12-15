@@ -1,8 +1,8 @@
 
 //hide and show answers
-$(document).ready(function(){
+$(document).ready(function(e){
 
-  //if you wish to keep both the divs hidden by default then dont forget to hide //them           
+  //if you wish to keep both the divs hidden by default then dont forget to hide //them
   $("#answers").hide();
   $("#response").hide();
 
@@ -12,13 +12,17 @@ $(document).ready(function(){
        $("#response").fadeIn();
   });
 
-      
+  $('#respond-yes').click(function(e) {
+	$.ajax({
+	  url: window.location.pathname + "/feedback",
+	  type: "POST",
+	  data: { correct: "yes"}
+	})
+	  .done(function( data ) {
+	    if ( console && console.log ) {
+	      console.log( "Sample of data:", data.slice( 0, 100 ) );
+	    }
+	});
+  });
+
 });
-
-// Function to call the respond method which logs the response in the log.
-
-// $(function() {
-//   $('#respond-yes').click(function (event) {
-//     analyzer.info("hiiiiiiiii")
-//   });
-// });

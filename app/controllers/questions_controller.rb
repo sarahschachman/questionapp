@@ -6,9 +6,6 @@ class QuestionsController < ApplicationController
 
   def index
     @questions = parsed_questions()
-    @analytics = Analytics.new
-    @analytics.print_hello
-    analyzer.info("HELLO WORLD THIS IS THE ANALYZER")
   end
 
   def new
@@ -18,7 +15,7 @@ class QuestionsController < ApplicationController
 
   def create
     question = Question.new(params.require(:question)
-      .permit(:text, 
+      .permit(:text,
         answers_attributes:[:text]))
     question.user_id = current_user.id
     post_question(question)
@@ -31,8 +28,16 @@ class QuestionsController < ApplicationController
     @question = @questions[(params[:id]).to_i - 1]["text"]
     @answers = @questions[(params[:id]).to_i - 1]["answers"]
     @answer = Answer.new
-    
-    
+
+
+  end
+
+  def feedback
+    user_knowledge = (params[:correct] == "yes" ? "knew" : "didn't know")
+    analyzer.info("User #{current_user.id} #{user_knowledge} question #{params[:id]}")
+    respond_to do |format|
+        format.js { render :nothing => true }
+    end
   end
 
 end
