@@ -17,3 +17,16 @@
   text-align: right;
 
 }
+
+.newquestion.container {
+  width: 75%;
+}
+
+.newquestion {
+  textarea {
+    height: 110px;
+  }
+  .box {
+    min-height: 380px;
+  }
+}
