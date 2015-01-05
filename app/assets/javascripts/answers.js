@@ -25,4 +25,8 @@ $(document).ready(function(e){
 	});
   });
 
+  $('#respond-yes').click(function(){
+    notice("blah blah")
+  });
+
 });
